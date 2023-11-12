@@ -60,7 +60,7 @@ export function Questions() {
       try {
         const response_file = await axios.post('https://easy-plum-calf-hose.cyclic.app/upload', formData);
         if (response_file.status === 200) {
-          const data = await axios.post(`${url}/api/questions/response`, formData)
+          const data = await axios.put(`${url}/api/questions/response`, formData)
             .then((response) => {
               if (response.status === 201) {
                 toast("Data saved successfully.")
